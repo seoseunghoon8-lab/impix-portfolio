@@ -7,7 +7,7 @@ import { GithubIcon } from "./BrandIcons";
 import { site } from "@/lib/site";
 import { staggerContainer as container, fadeUp as item } from "@/lib/motion";
 
-const featured = ["Python", "TypeScript", "Next.js", "FastAPI", "LangChain", "OpenAI API"];
+const featured = ["Python", "C++", "TypeScript", "React", "Next.js", "Git"];
 
 export function Hero() {
   return (
