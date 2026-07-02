@@ -8,53 +8,20 @@ export type TimelineEntry = {
   lesson: string;
 };
 
+// Real entries only. Add a new object to the top of this array for each milestone.
 export const timeline: TimelineEntry[] = [
   {
-    date: "2026-07-01",
-    title: "Internship kickoff & environment setup",
+    date: "2026-07-02",
+    title: "Set up my portfolio & learned Git/GitHub",
     tasks: [
-      "Onboarded to the IMPIX engineering workflow",
-      "Set up local dev: Node.js, Git, and the internal repos",
-      "Read through the existing AI service architecture",
+      "Built this Next.js portfolio + journal site",
+      "Installed Node.js, Git, and the GitHub CLI for the first time",
+      "Made my first commit and pushed the code to GitHub",
     ],
-    tech: ["Git", "Docker", "Python", "Next.js"],
-    challenge:
-      "The monorepo had several services and it wasn't obvious where the AI inference layer lived.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Git", "GitHub"],
+    challenge: "I had never used Git or the terminal before.",
     solution:
-      "Traced requests from the API gateway down to the model server and drew an architecture diagram to anchor my mental model.",
-    lesson:
-      "A 30-minute diagram saves days of confusion. Map the system before touching it.",
-  },
-  {
-    date: "2026-07-08",
-    title: "First feature: prompt template service",
-    tasks: [
-      "Designed a reusable prompt-template module",
-      "Added unit tests and a small evaluation harness",
-      "Opened my first PR and iterated on review feedback",
-    ],
-    tech: ["Python", "FastAPI", "OpenAI API", "pytest"],
-    challenge:
-      "Prompts were duplicated across endpoints, making changes error-prone.",
-    solution:
-      "Centralized prompts behind a typed template registry with versioning so every endpoint pulls from one source of truth.",
-    lesson:
-      "Treat prompts like code — version them, test them, review them.",
-  },
-  {
-    date: "2026-07-20",
-    title: "Retrieval-augmented answers (RAG)",
-    tasks: [
-      "Built an embedding + vector-search pipeline",
-      "Wired retrieval context into the generation step",
-      "Measured answer quality before/after retrieval",
-    ],
-    tech: ["LangChain", "Vector Databases", "PostgreSQL", "Python"],
-    challenge:
-      "Naive chunking returned irrelevant context and hurt answer quality.",
-    solution:
-      "Switched to semantic chunking with overlap and re-ranking, then filtered by a similarity threshold.",
-    lesson:
-      "Retrieval quality caps generation quality. Fix the inputs before tuning the model.",
+      "Learned the add → commit → push flow and used the GitHub CLI to publish the repository.",
+    lesson: "Version control is just shareable save points. Commit small, commit often.",
   },
 ];

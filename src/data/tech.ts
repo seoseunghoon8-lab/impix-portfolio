@@ -1,31 +1,21 @@
 export type Tech = {
   name: string;
-  category: "Language" | "Frontend" | "Backend" | "AI/ML" | "Data" | "DevOps";
+  category: "Language" | "Frontend" | "Tools";
   blurb: string;
 };
 
+// Only tools you've actually used. Add more as you pick them up during the internship.
 export const techStack: Tech[] = [
-  { name: "Python", category: "Language", blurb: "Primary language for AI services and tooling." },
-  { name: "TypeScript", category: "Language", blurb: "Type-safe frontend and Node work." },
-  { name: "JavaScript", category: "Language", blurb: "The runtime everything ships on." },
-  { name: "React", category: "Frontend", blurb: "Component-driven UIs." },
-  { name: "Next.js", category: "Frontend", blurb: "App Router, SSR, and this very site." },
-  { name: "Tailwind CSS", category: "Frontend", blurb: "Utility-first styling system." },
-  { name: "FastAPI", category: "Backend", blurb: "Async Python APIs for model serving." },
-  { name: "PostgreSQL", category: "Data", blurb: "Relational storage with pgvector." },
-  { name: "Vector Databases", category: "AI/ML", blurb: "Semantic search for retrieval." },
-  { name: "OpenAI API", category: "AI/ML", blurb: "LLM generation and embeddings." },
-  { name: "LangChain", category: "AI/ML", blurb: "Composing retrieval + generation." },
-  { name: "Docker", category: "DevOps", blurb: "Reproducible dev and deploy." },
-  { name: "Git", category: "DevOps", blurb: "Version control and collaboration." },
-  { name: "GitHub", category: "DevOps", blurb: "Reviews, Actions, and hosting." },
+  { name: "Python", category: "Language", blurb: "Years of algorithm practice and scripting." },
+  { name: "C++", category: "Language", blurb: "My main competitive-programming language." },
+  { name: "TypeScript", category: "Language", blurb: "Type-safe JavaScript — used to build this site." },
+  { name: "JavaScript", category: "Language", blurb: "The language the web runs on." },
+  { name: "React", category: "Frontend", blurb: "Component-based UIs." },
+  { name: "Next.js", category: "Frontend", blurb: "The framework powering this portfolio." },
+  { name: "Tailwind CSS", category: "Frontend", blurb: "Utility-first styling." },
+  { name: "Git", category: "Tools", blurb: "Version control — learned it building this site." },
+  { name: "GitHub", category: "Tools", blurb: "Where my code lives and deploys from." },
+  { name: "Node.js", category: "Tools", blurb: "Runs the dev server and tooling." },
 ];
 
-export const techCategories: Tech["category"][] = [
-  "Language",
-  "Frontend",
-  "Backend",
-  "AI/ML",
-  "Data",
-  "DevOps",
-];
+export const techCategories: Tech["category"][] = ["Language", "Frontend", "Tools"];

@@ -2,14 +2,14 @@ export const site = {
   name: "Seunghoon Seo",
   role: "AI Software Engineering Intern",
   company: "IMPIX",
-  tagline: "Building AI-powered products, one day at a time.",
+  tagline: "Documenting how I grow as an AI engineer.",
   intro:
-    "AI software engineering intern at IMPIX. I document what I build, what breaks, and how I fix it — turning a summer of work into a searchable record of how I grow as an engineer.",
+    "AI software engineering intern at IMPIX. I use this site to record what I actually build and learn during my internship — no filler, just real progress.",
   email: "seoseunghoon8@gmail.com",
-  github: "https://github.com/seoseunghoon8",
-  linkedin: "",
-  resumeUrl: "/resume.pdf",
-  location: "Seoul, South Korea",
+  github: "https://github.com/seoseunghoon8-lab",
+  linkedin: "", // no LinkedIn yet — leaving empty hides it from the site
+  resumeUrl: "/resume.pdf", // TODO: put a real resume.pdf in the /public folder
+  location: "Gyeonggi-do, South Korea",
 } as const;
 
 export const navLinks = [

@@ -12,24 +12,33 @@ export default function GalleryPage() {
       <PageHeader
         eyebrow="Gallery"
         title="Screens & diagrams"
-        subtitle="Screenshots, architecture drawings, and UI previews from internship projects. Placeholders for now — real captures land here as projects ship."
+        subtitle="Screenshots, architecture drawings, and UI previews from my internship projects."
       />
       <Section>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {gallery.map((g, i) => (
-            <Reveal key={g.title} delay={i * 0.05}>
-              <figure className="card overflow-hidden">
-                <div className={`flex aspect-video items-center justify-center bg-gradient-to-br ${g.gradient}`}>
-                  <ImageIcon className="text-foreground/40" size={30} />
-                </div>
-                <figcaption className="p-4">
-                  <p className="font-semibold">{g.title}</p>
-                  <p className="mt-1 text-sm text-muted">{g.caption}</p>
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
+        {gallery.length === 0 ? (
+          <div className="card grid place-items-center px-6 py-20 text-center">
+            <ImageIcon className="text-muted" size={32} />
+            <p className="mt-4 font-semibold">Nothing here yet</p>
+            <p className="mt-1 max-w-md text-sm text-muted">
+              Real screenshots and diagrams will show up here as my projects produce them.
+            </p>
+          </div>
+        ) : (
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {gallery.map((g, i) => (
+              <Reveal key={g.title} delay={i * 0.05}>
+                <figure className="card overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={g.src} alt={g.title} className="aspect-video w-full object-cover" />
+                  <figcaption className="p-4">
+                    <p className="font-semibold">{g.title}</p>
+                    <p className="mt-1 text-sm text-muted">{g.caption}</p>
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        )}
       </Section>
     </>
   );

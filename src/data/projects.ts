@@ -17,80 +17,33 @@ export type Project = {
   demo?: string;
 };
 
+// Real projects only. Add a new object here for each project you actually build.
 export const projects: Project[] = [
   {
-    slug: "ai-support-assistant",
-    title: "AI Support Assistant",
-    summary:
-      "A retrieval-augmented assistant that answers customer questions from internal docs.",
-    tags: ["RAG", "LLM", "FastAPI"],
+    slug: "developer-portfolio",
+    title: "Developer Portfolio & Internship Journal",
+    summary: "This site — where I document what I build and learn during my internship.",
+    tags: ["Next.js", "TypeScript", "Tailwind"],
     year: "2026",
     overview:
-      "An internal assistant that grounds answers in IMPIX documentation using retrieval-augmented generation, cutting the time support engineers spend searching.",
+      "A dark-mode-first portfolio and Markdown-powered journal built to record my growth during the IMPIX internship.",
     objectives: [
-      "Answer questions using only trusted internal sources",
-      "Keep p95 latency under 2 seconds",
-      "Make answers cite their sources",
+      "Have one place that shows what I actually did, not just a resume",
+      "Make it dead simple to add a journal entry",
+      "Deploy it so it updates automatically when I push code",
     ],
     architecture:
-      "Next.js frontend → FastAPI gateway → retrieval service (vector DB) → LLM generation with cited context. Embeddings are precomputed and refreshed nightly.",
-    tech: ["Python", "FastAPI", "LangChain", "Vector Databases", "OpenAI API", "Next.js"],
+      "A Next.js App Router site styled with Tailwind CSS. Journal entries are plain Markdown files, and the whole thing deploys on Vercel.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Git"],
     process: [
-      "Prototyped the retrieval pipeline in a notebook",
-      "Wrapped it in a FastAPI service with streaming responses",
-      "Built a chat UI with source citations",
+      "Wrote out what I wanted the site to do",
+      "Built the pages and components",
+      "Learned Git & GitHub to publish it",
     ],
-    problems: [
-      "Irrelevant chunks polluted the context window",
-      "Streaming responses dropped on reconnect",
-    ],
-    solutions: [
-      "Added re-ranking and a similarity threshold before injecting context",
-      "Implemented resumable server-sent events with heartbeat pings",
-    ],
-    results: [
-      "Reduced average lookup time from minutes to seconds",
-      "Answers now include clickable source links",
-    ],
-    future: [
-      "Add feedback thumbs to fine-tune retrieval",
-      "Support multi-turn memory across a session",
-    ],
-    repo: "https://github.com/seoseunghoon8",
-  },
-  {
-    slug: "prompt-template-registry",
-    title: "Prompt Template Registry",
-    summary:
-      "A typed, versioned home for every prompt used across our AI endpoints.",
-    tags: ["LLM", "DX", "Python"],
-    year: "2026",
-    overview:
-      "A central registry that stores prompts as versioned, typed templates so every service pulls from one source of truth instead of copy-pasting strings.",
-    objectives: [
-      "Eliminate duplicated prompt strings",
-      "Make prompt changes reviewable and testable",
-      "Allow safe rollbacks between prompt versions",
-    ],
-    architecture:
-      "A small library exposing typed template objects, backed by files under version control, with a tiny evaluation harness that runs example inputs on each change.",
-    tech: ["Python", "pytest", "OpenAI API"],
-    process: [
-      "Audited existing endpoints for duplicated prompts",
-      "Designed a typed template interface",
-      "Migrated endpoints one at a time behind tests",
-    ],
-    problems: [
-      "Different endpoints had subtly different copies of the same prompt",
-    ],
-    solutions: [
-      "Unified them into a single parameterized template with versioning",
-    ],
-    results: [
-      "One place to change a prompt",
-      "Prompt diffs now show up clearly in code review",
-    ],
-    future: ["Add A/B evaluation between prompt versions"],
-    repo: "https://github.com/seoseunghoon8",
+    problems: ["I had never used Git, GitHub, or Next.js before."],
+    solutions: ["Learned each tool step by step and shipped a working site on day one."],
+    results: ["A site I can update with a single `git push`."],
+    future: ["Add real internship projects and screenshots as I go."],
+    repo: "https://github.com/seoseunghoon8-lab/impix-portfolio",
   },
 ];
